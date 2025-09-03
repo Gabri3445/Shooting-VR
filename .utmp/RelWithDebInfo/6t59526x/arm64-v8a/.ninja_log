@@ -1,0 +1,12 @@
+# ninja log v5
+236	1312	7785999750962522	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	99fffe301ba21ca
+1314	4157	7785999774564253	S:/Unity Projects/Shooting-VR/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6t59526x/obj/arm64-v8a/libswappywrapper.so	f43e4f03b9272f4f
+88	5705	7785999794576997	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	38ea1049caf1d1d7
+20	5748	7785999795909061	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	b872367a511bbbaa
+49	5766	7785999794945009	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	32718c7811794965
+1	5897	7785999797114030	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	4841be1c1789157a
+184	5969	7785999797189785	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	1bce32d22f46c611
+140	6320	7785999801432247	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	ea6321a896188a5b
+65	6696	7785999804380049	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	152ab831ae60a003
+33	7315	7785999811638568	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	3404d1ea572dd95f
+7315	7802	7785999816426353	S:/Unity Projects/Shooting-VR/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6t59526x/obj/arm64-v8a/libgame.so	4a6fa968415d90c9

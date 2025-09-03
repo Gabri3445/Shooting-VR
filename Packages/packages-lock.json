@@ -2,7 +2,7 @@
   "dependencies": {
     "com.unity.burst": {
       "version": "1.8.23",
-      "depth": 3,
+      "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.unity.mathematics": "1.2.1",
@@ -19,7 +19,7 @@
     },
     "com.unity.collections": {
       "version": "2.5.1",
-      "depth": 3,
+      "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.unity.burst": "1.8.17",
@@ -99,7 +99,7 @@
     },
     "com.unity.nuget.mono-cecil": {
       "version": "1.11.4",
-      "depth": 4,
+      "depth": 3,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -125,7 +125,7 @@
     },
     "com.unity.render-pipelines.core": {
       "version": "17.1.0",
-      "depth": 2,
+      "depth": 1,
       "source": "builtin",
       "dependencies": {
         "com.unity.burst": "1.8.14",
@@ -140,7 +140,7 @@
     },
     "com.unity.rendering.light-transport": {
       "version": "1.0.1",
-      "depth": 3,
+      "depth": 2,
       "source": "builtin",
       "dependencies": {
         "com.unity.collections": "2.2.0",
@@ -183,7 +183,7 @@
     },
     "com.unity.test-framework.performance": {
       "version": "3.1.0",
-      "depth": 4,
+      "depth": 3,
       "source": "registry",
       "dependencies": {
         "com.unity.test-framework": "1.1.33",
@@ -220,6 +220,15 @@
       "dependencies": {
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
+      }
+    },
+    "com.unity.visualeffectgraph": {
+      "version": "17.1.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.shadergraph": "17.1.0",
+        "com.unity.render-pipelines.core": "17.1.0"
       }
     },
     "com.unity.visualscripting": {
