@@ -20,6 +20,7 @@ public class Pistol : MonoBehaviour
     public GameObject bulletPrefab;
     public int bulletCount;
     public AmmoCounter ammoCounter;
+    public AudioClip reloadClip;
     private float _activateAxis;
     private AudioSource _audioSource;
     private bool _canShoot = true;
@@ -99,6 +100,7 @@ public class Pistol : MonoBehaviour
             });
         }
 
+        _audioSource.PlayOneShot(reloadClip);
         _remainingBullets = bulletCount;
         ammoCounter.UpdateAmmoCounter(_remainingBullets);
         _isMagEmpty = false;

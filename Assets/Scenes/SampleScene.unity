@@ -159,7 +159,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 232264520}
 --- !u!33 &25369865
@@ -1176,25 +1176,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1048609861120462963, guid: cdef3d36835b1494299b84011bef388c, type: 3}
-      propertyPath: m_MovementType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1048609861120462963, guid: cdef3d36835b1494299b84011bef388c, type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 822083443}
-    - target: {fileID: 1057957235288176108, guid: cdef3d36835b1494299b84011bef388c, type: 3}
-      propertyPath: slideRack
-      value: 
-      objectReference: {fileID: 8300000, guid: 9e99bc5fa0060a14e964d0087907bbc2, type: 3}
-    - target: {fileID: 1057957235288176108, guid: cdef3d36835b1494299b84011bef388c, type: 3}
-      propertyPath: ammoCounter
-      value: 
-      objectReference: {fileID: 2662736149655688002}
-    - target: {fileID: 1057957235288176108, guid: cdef3d36835b1494299b84011bef388c, type: 3}
-      propertyPath: bulletCount
-      value: 18
-      objectReference: {fileID: 0}
     - target: {fileID: 4891951305641061332, guid: cdef3d36835b1494299b84011bef388c, type: 3}
       propertyPath: m_Name
       value: Pistol
@@ -1244,17 +1228,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdef3d36835b1494299b84011bef388c, type: 3}
---- !u!114 &2662736149655688002 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7289695410198566145, guid: cdef3d36835b1494299b84011bef388c, type: 3}
-  m_PrefabInstance: {fileID: 2662736149655688001}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcbbcfda3f6b17f4c86fe9b90cce0553, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4921623454001287411
 PrefabInstance:
   m_ObjectHideFlags: 0

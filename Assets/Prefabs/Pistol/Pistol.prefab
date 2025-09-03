@@ -5815,7 +5815,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -5873,12 +5873,14 @@ MonoBehaviour:
   trigger: {fileID: 5777491261679893627}
   muzzleParticle: {fileID: 1826927806402524287}
   gunShot: {fileID: 8300000, guid: 1334df83956fe324f91ce6d605c6c910, type: 3}
+  slideRack: {fileID: 8300000, guid: 9e99bc5fa0060a14e964d0087907bbc2, type: 3}
   ejectPort: {fileID: 9125245560865663024}
   casingPrefab: {fileID: 1567416987352680264, guid: 653a6bf2f8d3ac24b86ec427897714e9, type: 3}
   muzzlePos: {fileID: 1674315540506899625}
   bulletPrefab: {fileID: 673751593135133373, guid: d760bd038d5e75049baf0525bec5bebf, type: 3}
-  bulletCount: 0
-  ammoCounter: {fileID: 0}
+  bulletCount: 18
+  ammoCounter: {fileID: 7289695410198566145}
+  reloadClip: {fileID: 8300000, guid: b7cfaae3eda32794c9c92afc8df422ec, type: 3}
 --- !u!64 &3013451282500199874
 MeshCollider:
   m_ObjectHideFlags: 0
