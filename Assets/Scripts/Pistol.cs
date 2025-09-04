@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -62,6 +63,15 @@ public class Pistol : MonoBehaviour
         foreach (var meshRenderer in renderers) meshRenderer.enabled = false;
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (!other.CompareTag("Controller")) return;
+        var parent = other.transform.parent;
+        if (parent == null) return;
+        var renderers = parent.GetComponentsInChildren<MeshRenderer>();
+        foreach (var meshRenderer in renderers) meshRenderer.enabled = false;
+    }
+
 
     private void OnTriggerExit(Collider other)
     {
@@ -99,8 +109,10 @@ public class Pistol : MonoBehaviour
                 return animInfo.IsName(SlideForwardClip) && animInfo.normalizedTime >= 1f;
             });
         }
-
-        _audioSource.PlayOneShot(reloadClip);
+        else
+        {
+            _audioSource.PlayOneShot(reloadClip);
+        }
         _remainingBullets = bulletCount;
         ammoCounter.UpdateAmmoCounter(_remainingBullets);
         _isMagEmpty = false;
