@@ -23,6 +23,8 @@ public class Pistol : MonoBehaviour
     public int bulletCount;
     public AmmoCounter ammoCounter;
     public AudioClip reloadClip;
+    public HapticImpulsePlayer leftHapticImpulse;
+    public HapticImpulsePlayer rightHapticImpulse;
     private float _activateAxis;
     private AudioSource _audioSource;
     private bool _canShoot = true;
@@ -30,8 +32,6 @@ public class Pistol : MonoBehaviour
     private XRIDefaultInputActions _inputActions;
     private bool _isMagEmpty;
     private int _remainingBullets;
-    public HapticImpulsePlayer leftHapticImpulse;
-    public HapticImpulsePlayer rightHapticImpulse;
 
     private void Awake()
     {
@@ -66,15 +66,6 @@ public class Pistol : MonoBehaviour
         foreach (var meshRenderer in renderers) meshRenderer.enabled = false;
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (!other.CompareTag("Controller")) return;
-        var parent = other.transform.parent;
-        if (parent == null) return;
-        var renderers = parent.GetComponentsInChildren<MeshRenderer>();
-        foreach (var meshRenderer in renderers) meshRenderer.enabled = false;
-    }
-
 
     private void OnTriggerExit(Collider other)
     {
@@ -83,6 +74,15 @@ public class Pistol : MonoBehaviour
         if (parent == null) return;
         var renderers = parent.GetComponentsInChildren<MeshRenderer>();
         foreach (var meshRenderer in renderers) meshRenderer.enabled = true;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (!other.CompareTag("Controller")) return;
+        var parent = other.transform.parent;
+        if (parent == null) return;
+        var renderers = parent.GetComponentsInChildren<MeshRenderer>();
+        foreach (var meshRenderer in renderers) meshRenderer.enabled = false;
     }
 
     private void ReloadLeft(InputAction.CallbackContext context)
@@ -116,6 +116,7 @@ public class Pistol : MonoBehaviour
         {
             _audioSource.PlayOneShot(reloadClip);
         }
+
         _remainingBullets = bulletCount;
         ammoCounter.UpdateAmmoCounter(_remainingBullets);
         _isMagEmpty = false;

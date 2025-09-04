@@ -16,7 +16,7 @@ public class Target : MonoBehaviour
         _animator = GetComponent<Animator>();
         _scoreUI = FindAnyObjectByType<ScoreUI>();
     }
-    
+
     private void OnCollisionEnter(Collision other)
     {
         if (!other.gameObject.CompareTag("Bullet")) return;
@@ -26,8 +26,8 @@ public class Target : MonoBehaviour
         _scoreUI.AddPoints(10);
         StartCoroutine(PlayAnimation());
     }
-    
-    
+
+
     private IEnumerator PlayAnimation()
     {
         _animator.Play(DownClip, 0, 0f);

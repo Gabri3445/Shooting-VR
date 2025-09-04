@@ -5,7 +5,7 @@ public class ScoreUI : MonoBehaviour
 {
     public TMP_Text scoreText;
     public string template = "Points: ";
-    private int _points = 0;
+    private int _points;
 
     public void ResetScore()
     {
