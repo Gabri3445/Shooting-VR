@@ -158,8 +158,8 @@ public class Pistol : MonoBehaviour
         slideAnimator.Play(SlideBackClip, 0, 0f);
         _audioSource.PlayOneShot(gunShot);
         muzzleParticle.Play();
-        var casing = Instantiate(casingPrefab, ejectPort.position, Quaternion.identity);
-        casing.GetComponent<Rigidbody>().AddForce(new Vector3(0.05f, 0.05f, 0), ForceMode.Impulse);
+        var casing = Instantiate(casingPrefab, ejectPort.position, ejectPort.rotation);
+        casing.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0.05f, 0.05f, 0), ForceMode.Impulse);
         var bullet = Instantiate(bulletPrefab, muzzlePos.position, muzzlePos.rotation);
         bullet.GetComponent<Rigidbody>().AddForce(muzzlePos.forward * 10f, ForceMode.Impulse);
         _remainingBullets--;
