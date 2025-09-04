@@ -10,6 +10,7 @@ public class ScoreUI : MonoBehaviour
     public void ResetScore()
     {
         _points = 0;
+        scoreText.text = template + _points;
     }
 
     public void AddPoints(int points)
