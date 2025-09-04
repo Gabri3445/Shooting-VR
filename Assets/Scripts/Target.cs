@@ -8,11 +8,13 @@ public class Target : MonoBehaviour
     public float timer;
     private Animator _animator;
     private bool _isUp;
+    private ScoreUI _scoreUI;
 
     private void Awake()
     {
         _isUp = true;
         _animator = GetComponent<Animator>();
+        _scoreUI = FindAnyObjectByType<ScoreUI>();
     }
     
     private void OnCollisionEnter(Collision other)
@@ -21,6 +23,7 @@ public class Target : MonoBehaviour
         if (other.rigidbody.linearVelocity.magnitude < 5f) return;
         if (!_isUp) return;
         _isUp = false;
+        _scoreUI.AddPoints(10);
         StartCoroutine(PlayAnimation());
     }
     
