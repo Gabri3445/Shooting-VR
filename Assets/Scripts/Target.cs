@@ -13,7 +13,6 @@ public class Target : MonoBehaviour
     {
         _isUp = true;
         _animator = GetComponent<Animator>();
-        Test();
     }
     
     private void OnCollisionEnter(Collision other)
@@ -21,12 +20,6 @@ public class Target : MonoBehaviour
         if (!other.gameObject.CompareTag("Bullet")) return;
         if (other.rigidbody.linearVelocity.magnitude < 5f) return;
         if (!_isUp) return;
-        _isUp = false;
-        StartCoroutine(PlayAnimation());
-    }
-
-    private void Test()
-    {
         _isUp = false;
         StartCoroutine(PlayAnimation());
     }

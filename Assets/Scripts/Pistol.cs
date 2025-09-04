@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class Pistol : MonoBehaviour
@@ -29,6 +30,8 @@ public class Pistol : MonoBehaviour
     private XRIDefaultInputActions _inputActions;
     private bool _isMagEmpty;
     private int _remainingBullets;
+    public HapticImpulsePlayer leftHapticImpulse;
+    public HapticImpulsePlayer rightHapticImpulse;
 
     private void Awake()
     {
@@ -160,6 +163,19 @@ public class Pistol : MonoBehaviour
         bullet.GetComponent<Rigidbody>().AddForce(muzzlePos.forward * 10f, ForceMode.Impulse);
         _remainingBullets--;
         ammoCounter.UpdateAmmoCounter(_remainingBullets);
+        switch (_handedness)
+        {
+            case InteractorHandedness.Left:
+                leftHapticImpulse.SendHapticImpulse(0.8f, 0.2f);
+                break;
+            case InteractorHandedness.Right:
+                rightHapticImpulse.SendHapticImpulse(0.8f, 0.2f);
+                break;
+            case InteractorHandedness.None:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
 
 
         yield return new WaitUntil(() =>
