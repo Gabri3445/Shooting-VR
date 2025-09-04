@@ -6,7 +6,9 @@ public class Target : MonoBehaviour
     private const string UpClip = "Up";
     private const string DownClip = "Down";
     public float timer;
+    public AudioClip hitClip;
     private Animator _animator;
+    private AudioSource _audioSource;
     private bool _isUp;
     private ScoreUI _scoreUI;
 
@@ -15,6 +17,7 @@ public class Target : MonoBehaviour
         _isUp = true;
         _animator = GetComponent<Animator>();
         _scoreUI = FindAnyObjectByType<ScoreUI>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter(Collision other)
@@ -22,6 +25,7 @@ public class Target : MonoBehaviour
         if (!other.gameObject.CompareTag("Bullet")) return;
         if (other.rigidbody.linearVelocity.magnitude < 5f) return;
         if (!_isUp) return;
+        _audioSource.PlayOneShot(hitClip);
         _isUp = false;
         _scoreUI.AddPoints(10);
         StartCoroutine(PlayAnimation());
